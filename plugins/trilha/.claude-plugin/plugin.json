@@ -1,0 +1,16 @@
+{
+  "name": "trilha",
+  "displayName": "Trilha Claude Code (beta)",
+  "description": "Trilha de 24 semanas, 1 hora por dia, para sair de iniciante e virar especialista em soluções com IA (sites, apps, SaaS e ERP) usando o Claude Code. Inclui entrevista de entrada, tutor diário e página com mapa e progresso.",
+  "author": {
+    "name": "Gabriel"
+  },
+  "keywords": [
+    "aprendizado",
+    "trilha",
+    "tutor",
+    "portugues"
+  ],
+  "homepage": "https://github.com/ogabecardoso/trilha-ia",
+  "repository": "https://github.com/ogabecardoso/trilha-ia"
+}

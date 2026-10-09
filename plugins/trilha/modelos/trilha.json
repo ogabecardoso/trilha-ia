@@ -1,0 +1,1702 @@
+{
+  "titulo": "Trilha Claude Code",
+  "inicio": "AAAA-MM-DD",
+  "versaoBase": "2.1.295",
+  "comando": "/trilha:aula",
+  "laboratorio": {
+    "pasta": "{{PASTA_LAB}}",
+    "regras": [
+      "Só dados fictícios. Dados reais só do cliente piloto, com autorização dele. {{REGRA_DADOS}}",
+      "Senhas e chaves ficam em `.env`, que nunca vai para o Git e o Claude não lê.",
+      "Telas em português, código em inglês, comentários em português no começo.",
+      "Uma tarefa por conversa. Mudou de assunto, `/clear`.",
+      "Cada aula traz um selo com a versão do Claude Code em que foi conferida. Se algo não bater com a sua versão, o tutor anota em \"O que mudou\"."
+    ]
+  },
+  "fases": [
+    {
+      "id": "F1",
+      "nome": "Fundamentos",
+      "semanas": [
+        1,
+        3
+      ],
+      "resumo": "O Claude Code por dentro, o mínimo de programação para não ficar perdido e Git do zero.",
+      "marco": null,
+      "prova": {
+        "titulo": "Prova da Fase 1",
+        "tarefa": "Sem roteiro: em `exercicios/prova-1/`, crie com o Claude um script Node que lê um JSON de agendamentos fictícios do estúdio e gera um resumo do dia em Markdown. O trabalho precisa de pelo menos 4 commits com mensagens claras e uma branch juntada com merge. No fim, explique para uma pessoa leiga, em 3 minutos, como um site chega ao celular dela.",
+        "criterios": [
+          "O script roda sem erro e o resumo sai correto",
+          "O histórico do Git conta a história do trabalho",
+          "Você explica cada parte do código sem ler",
+          "Você anotou o consumo da sessão no `/usage`"
+        ]
+      }
+    },
+    {
+      "id": "F2",
+      "nome": "Customizador",
+      "semanas": [
+        4,
+        5
+      ],
+      "resumo": "Molde o Claude Code ao seu jeito de trabalhar e monte o kit da sua agência.",
+      "marco": null,
+      "prova": {
+        "titulo": "Prova da Fase 2",
+        "tarefa": "Com o seu kit, inicie um projeto do zero com `/novo-projeto` em até 30 minutos: pasta, Git, CLAUDE.md, permissões e um briefing de exemplo feito com `/briefing`.",
+        "criterios": [
+          "Projeto criado só com o kit, sem passos manuais esquecidos",
+          "O CLAUDE.md descreve cliente, stack e regras",
+          "As permissões protegem segredos (.env)",
+          "Tempo total dentro de 30 minutos"
+        ]
+      }
+    },
+    {
+      "id": "F3",
+      "nome": "Projeto 1 · Site",
+      "semanas": [
+        6,
+        7
+      ],
+      "segmento": "Estúdio de depilação",
+      "cliente": "Cliente piloto real: alguém próximo com um pequeno negócio",
+      "resumo": "Site institucional com serviços e preços, galeria, depoimentos, WhatsApp, mapa e Google da cidade. Agendamento online vira proposta de upgrade.",
+      "marco": "Sites e landing pages",
+      "prova": {
+        "titulo": "Prova da Fase 3",
+        "tarefa": "Landing page de fim de semana: a partir de um briefing fictício de outro segmento (escritório de contabilidade), faça proposta com preço e entregue a página publicada até domingo.",
+        "criterios": [
+          "Proposta com preço feita antes de começar",
+          "Página publicada com HTTPS",
+          "Funciona bem no celular",
+          "Horas registradas e comparadas com a estimativa"
+        ]
+      }
+    },
+    {
+      "id": "F4",
+      "nome": "Projeto 2 · App",
+      "semanas": [
+        8,
+        11
+      ],
+      "segmento": "Pomar de maçã",
+      "cliente": "Produtor fictício (o cliente piloto pode interpretar)",
+      "resumo": "Controle de colheita: bins por safrista e por quadra, pagamento por produção, uso no celular e modo offline simples.",
+      "marco": "Apps internos sob medida",
+      "prova": {
+        "titulo": "Prova da Fase 4",
+        "tarefa": "Mudança de escopo: o produtor pede controle de qualidade por bin (frutas descartadas). Avalie o impacto, faça um aditivo com preço e entregue em um fim de semana.",
+        "criterios": [
+          "Impacto estimado antes de escrever código",
+          "Aditivo da proposta com preço",
+          "Testes cobrindo a nova regra",
+          "Publicado sem quebrar o que já existia"
+        ]
+      }
+    },
+    {
+      "id": "F5",
+      "nome": "Projeto 3 · SaaS",
+      "semanas": [
+        12,
+        17
+      ],
+      "segmento": "Estúdios de pilates e academias pequenas",
+      "cliente": "Vários estúdios fictícios (assinatura)",
+      "resumo": "Produto multi-cliente: alunos, planos, agenda, reservas e cobrança recorrente.",
+      "marco": "Produtos com assinatura",
+      "prova": {
+        "titulo": "Prova da Fase 5",
+        "tarefa": "Novo recurso pago: crie o add-on de pacotes de aulas avulsas, com cobrança, isolado por estúdio, em uma semana.",
+        "criterios": [
+          "Dados isolados por estúdio",
+          "Cobrança testada no sandbox",
+          "Artigo na central de ajuda",
+          "Nenhuma funcionalidade antiga quebrada"
+        ]
+      }
+    },
+    {
+      "id": "F6",
+      "nome": "Projeto 4 · Mini-ERP",
+      "semanas": [
+        18,
+        23
+      ],
+      "segmento": "Distribuidora de materiais de construção",
+      "cliente": "Distribuidora fictícia",
+      "resumo": "ERP básico: compras, estoque, orçamentos e vendas, financeiro, permissões por cargo e NF-e em homologação.",
+      "marco": "Sistemas de gestão sob medida",
+      "prova": {
+        "titulo": "Prova da Fase 6",
+        "tarefa": "Módulo de devoluções de clientes: estoque, financeiro e NF-e de devolução em homologação.",
+        "criterios": [
+          "Estoque e financeiro corretos depois da devolução",
+          "NF-e de devolução autorizada em homologação",
+          "Testes cobrindo o fluxo",
+          "Documentação para o usuário"
+        ]
+      }
+    },
+    {
+      "id": "F7",
+      "nome": "Prova final",
+      "semanas": [
+        24,
+        24
+      ],
+      "resumo": "Um cliente que você nunca viu: briefing, proposta com preço e protótipo publicado em uma semana.",
+      "marco": "Especialista em soluções com IA",
+      "prova": {
+        "titulo": "Prova final",
+        "tarefa": "Você recebe o briefing de um segmento sorteado e, em uma semana, entrega levantamento de requisitos, proposta com preço e um protótipo publicado.",
+        "criterios": [
+          "Os requisitos cobrem o problema real do cliente",
+          "A proposta tem escopo, fora de escopo, prazo e preço justificados",
+          "O protótipo publicado resolve o fluxo principal",
+          "Você explica as decisões técnicas sem ler"
+        ]
+      }
+    }
+  ],
+  "semanas": [
+    {
+      "n": 1,
+      "fase": "F1",
+      "titulo": "Primeiros passos com o Claude Code",
+      "aulas": [
+        {
+          "id": "S01A1",
+          "titulo": "Como o Claude Code trabalha",
+          "objetivo": "Entender o ciclo pedir, ler, agir e conferir, e reconhecer as ferramentas que o Claude usa.",
+          "checklist": [
+            "Sei explicar o que acontece entre o meu pedido e a resposta",
+            "Reconheço quando o Claude lê, edita ou executa algo",
+            "Sei interromper com Esc e redirecionar"
+          ],
+          "conteudo": true
+        },
+        {
+          "id": "S01A2",
+          "titulo": "Contexto e economia de uso",
+          "objetivo": "Entender a janela de contexto e controlar o consumo do seu plano.",
+          "checklist": [
+            "Leio o `/context` e o `/usage`",
+            "Sei quando usar `/clear` e quando usar `/compact`",
+            "Troco modelo e esforço conforme a tarefa"
+          ],
+          "conteudo": true
+        },
+        {
+          "id": "S01A3",
+          "titulo": "Pedir bem e planejar antes",
+          "objetivo": "Escrever pedidos com objetivo, contexto, restrições e critério de pronto, e usar o modo plano.",
+          "checklist": [
+            "Uso `@` para apontar arquivos",
+            "Escrevo pedidos com critério de pronto",
+            "Uso o modo plano antes de tarefas com vários passos"
+          ],
+          "conteudo": true
+        },
+        {
+          "id": "S01A4",
+          "titulo": "Permissões, segurança e desfazer",
+          "objetivo": "Controlar o que o Claude pode fazer sem perguntar e desfazer mudanças com segurança.",
+          "checklist": [
+            "Conheço os modos Manual, acceptEdits, plan e auto",
+            "Bloqueei a leitura de um arquivo de segredos",
+            "Sei desfazer com `/rewind` e sei o que ele não desfaz"
+          ],
+          "conteudo": true
+        },
+        {
+          "id": "S01A5",
+          "titulo": "Terminal, sessões e as três interfaces",
+          "objetivo": "Rodar comandos com `!`, retomar sessões e saber quando usar terminal, Desktop ou VS Code.",
+          "checklist": [
+            "Uso `!` para rodar um comando direto",
+            "Retomo uma sessão com `claude -c` ou `/resume`",
+            "Sei quando usar cada interface"
+          ],
+          "conteudo": true
+        }
+      ],
+      "desafio": {
+        "id": "S01D",
+        "titulo": "Uma sessão completa sem roteiro",
+        "descricao": "Peça ao Claude uma cola pessoal dos comandos da semana em `exercicios/semana-01/cola.md`. Use o modo plano, revise, desfaça uma parte com rewind e anote o consumo antes e depois.",
+        "conteudo": true
+      }
+    },
+    {
+      "n": 2,
+      "fase": "F1",
+      "titulo": "Os formatos e a lógica por trás do código",
+      "aulas": [
+        {
+          "id": "S02A1",
+          "titulo": "Markdown: a língua do Claude Code",
+          "objetivo": "Ler e escrever Markdown, o formato de CLAUDE.md, README e skills.",
+          "checklist": [
+            "Escrevo títulos, listas, links e blocos de código",
+            "Escrevi o README do laboratório"
+          ]
+        },
+        {
+          "id": "S02A2",
+          "titulo": "JSON: dados e configurações",
+          "objetivo": "Ler e editar JSON sem quebrar: objetos, listas, tipos e vírgulas.",
+          "checklist": [
+            "Leio o meu `settings.json` e explico cada chave",
+            "Edito o `progresso.json` sem erro de sintaxe",
+            "Valido um JSON com o Node"
+          ]
+        },
+        {
+          "id": "S02A3",
+          "titulo": "YAML e frontmatter",
+          "objetivo": "Ler YAML e o cabeçalho (frontmatter) das skills.",
+          "checklist": [
+            "Explico a diferença entre JSON e YAML",
+            "Leio o frontmatter de uma skill e sei o que cada campo faz"
+          ]
+        },
+        {
+          "id": "S02A4",
+          "titulo": "Lógica I: variáveis, tipos e decisões",
+          "objetivo": "Ler código JavaScript simples com variáveis, tipos e if/else, rodando com Node.",
+          "checklist": [
+            "Rodo um script com `node arquivo.js`",
+            "Explico o que um if/else faz num trecho de código",
+            "Peço ao Claude para explicar código linha a linha"
+          ]
+        },
+        {
+          "id": "S02A5",
+          "titulo": "Lógica II: listas, laços, funções e erros",
+          "objetivo": "Entender listas, laços e funções e ler uma mensagem de erro.",
+          "checklist": [
+            "Leio um laço e sei o que ele repete",
+            "Escrevo uma função simples com ajuda do Claude",
+            "Passo uma mensagem de erro completa ao Claude"
+          ]
+        }
+      ],
+      "desafio": {
+        "id": "S02D",
+        "titulo": "Tabela de preços automática",
+        "descricao": "Script Node que lê `servicos.json` (serviços fictícios do cliente do Projeto 1) e gera `tabela-precos.md`. Você descreve, o Claude escreve, você explica cada linha."
+      }
+    },
+    {
+      "n": 3,
+      "fase": "F1",
+      "titulo": "Git do zero e como a web funciona",
+      "aulas": [
+        {
+          "id": "S03A1",
+          "titulo": "Git I: o que é versionar",
+          "objetivo": "Entender repositório, commit e histórico e fazer o primeiro commit do laboratório.",
+          "checklist": [
+            "Configurei nome e e-mail no Git",
+            "Fiz meu primeiro commit",
+            "Leio o `git status` e explico o que ele diz"
+          ]
+        },
+        {
+          "id": "S03A2",
+          "titulo": "Git II: histórico, diferenças e desfazer",
+          "objetivo": "Usar log, diff, restore e revert e entender o `.gitignore`.",
+          "checklist": [
+            "Leio `git log` e `git diff`",
+            "Desfaço uma mudança com segurança",
+            "Sei por que `.env` fica fora do Git"
+          ]
+        },
+        {
+          "id": "S03A3",
+          "titulo": "Git III: branches e merge",
+          "objetivo": "Trabalhar em branches, juntar com merge e resolver um conflito simples.",
+          "checklist": [
+            "Crio e troco de branch",
+            "Faço merge",
+            "Resolvi um conflito com ajuda do Claude"
+          ]
+        },
+        {
+          "id": "S03A4",
+          "titulo": "Como um sistema web funciona",
+          "objetivo": "Montar o mapa mental: navegador, servidor, banco de dados, API, hospedagem, domínio e DNS.",
+          "checklist": [
+            "Explico a um leigo como um site chega ao celular",
+            "Diferencio front-end, back-end e banco de dados"
+          ]
+        },
+        {
+          "id": "S03A5",
+          "titulo": "A stack da trilha",
+          "objetivo": "Conhecer Node, npm, Next.js, TypeScript, Tailwind, Supabase e Vercel e rodar o primeiro Next.js local.",
+          "checklist": [
+            "Sei o papel de cada peça da stack",
+            "Rodei um projeto Next.js no meu computador",
+            "Entendo para que serve o `package.json`"
+          ]
+        }
+      ],
+      "prova": "F1"
+    },
+    {
+      "n": 4,
+      "fase": "F2",
+      "titulo": "Memória, configurações e skills",
+      "aulas": [
+        {
+          "id": "S04A1",
+          "titulo": "CLAUDE.md: a memória do projeto",
+          "objetivo": "Entender a hierarquia de CLAUDE.md (global, projeto, pasta) e escrever arquivos úteis e enxutos.",
+          "checklist": [
+            "Criei meu CLAUDE.md global com preferências pessoais",
+            "Melhorei o CLAUDE.md do laboratório",
+            "Sei por que um CLAUDE.md enxuto economiza"
+          ]
+        },
+        {
+          "id": "S04A2",
+          "titulo": "Settings e permissões sob medida",
+          "objetivo": "Configurar settings.json nos níveis usuário, projeto e local, com regras allow, ask e deny.",
+          "checklist": [
+            "Sei onde fica cada nível de settings",
+            "Criei regras de permissão para o laboratório"
+          ]
+        },
+        {
+          "id": "S04A3",
+          "titulo": "Skills I: anatomia de uma skill",
+          "objetivo": "Entender SKILL.md, frontmatter, descrição e arquivos de apoio, desmontando a skill de tutor da trilha.",
+          "checklist": [
+            "Explico como o Claude decide usar uma skill",
+            "Sei a diferença entre skill pessoal e de projeto"
+          ]
+        },
+        {
+          "id": "S04A4",
+          "titulo": "Skills II: /briefing",
+          "objetivo": "Criar a skill de levantamento de requisitos que você vai usar com clientes.",
+          "checklist": [
+            "Skill `/briefing` funcionando no kit",
+            "Testei com um cliente simulado"
+          ]
+        },
+        {
+          "id": "S04A5",
+          "titulo": "Skills III: /proposta",
+          "objetivo": "Criar a skill que monta propostas comerciais a partir de um briefing.",
+          "checklist": [
+            "`/proposta` gera uma proposta a partir de um briefing",
+            "Template com escopo, fora de escopo, prazo e preço"
+          ]
+        }
+      ],
+      "desafio": {
+        "id": "S04D",
+        "titulo": "Reconstruir o tutor",
+        "descricao": "Recrie a skill de tutor da trilha do zero numa pasta de teste, sem olhar a original, e depois compare as duas."
+      }
+    },
+    {
+      "n": 5,
+      "fase": "F2",
+      "titulo": "Automação, agentes e o fluxo profissional",
+      "aulas": [
+        {
+          "id": "S05A1",
+          "titulo": "Hooks: automações garantidas",
+          "objetivo": "Entender os eventos de hook e criar um que formata o código depois de cada edição.",
+          "checklist": [
+            "Sei a diferença entre hook e instrução no CLAUDE.md",
+            "Criei um hook e conferi no `/hooks`"
+          ]
+        },
+        {
+          "id": "S05A2",
+          "titulo": "Subagentes",
+          "objetivo": "Usar e criar subagentes para pesquisa e revisão, sabendo quanto custam.",
+          "checklist": [
+            "Criei um subagente revisor",
+            "Sei quando um subagente economiza contexto"
+          ]
+        },
+        {
+          "id": "S05A3",
+          "titulo": "MCP: conectar ferramentas externas",
+          "objetivo": "Conectar um servidor MCP e avaliar segurança e custo.",
+          "checklist": [
+            "Adicionei e removi um servidor MCP",
+            "Sei quando preferir um CLI a um MCP"
+          ]
+        },
+        {
+          "id": "S05A4",
+          "titulo": "/novo-projeto e o kit como plugin",
+          "objetivo": "Criar a skill que inicia projetos padronizados e empacotar o kit como plugin pessoal.",
+          "checklist": [
+            "`/novo-projeto` cria um projeto padronizado",
+            "Meu kit virou um plugin pessoal"
+          ]
+        },
+        {
+          "id": "S05A5",
+          "titulo": "O fluxo profissional",
+          "objetivo": "Explorar, planejar, implementar, testar, revisar e commitar, com `/code-review` e worktrees.",
+          "checklist": [
+            "Sigo o fluxo sem pular etapas",
+            "Usei `/code-review` em uma mudança",
+            "Entendo para que servem worktrees"
+          ]
+        }
+      ],
+      "prova": "F2"
+    },
+    {
+      "n": 6,
+      "fase": "F3",
+      "titulo": "Do briefing ao site rodando",
+      "aulas": [
+        {
+          "id": "S06A1",
+          "titulo": "Entrevista com a cliente",
+          "objetivo": "Conduzir o briefing real com o cliente piloto usando `/briefing`.",
+          "checklist": [
+            "Entrevista feita e registrada",
+            "Objetivos de negócio do site definidos"
+          ]
+        },
+        {
+          "id": "S06A2",
+          "titulo": "Escopo, preço e proposta",
+          "objetivo": "Definir escopo, estimar horas, precificar e apresentar a proposta.",
+          "checklist": [
+            "Escopo com o que entra e o que não entra",
+            "Preço calculado com método",
+            "Proposta aprovada pela cliente"
+          ]
+        },
+        {
+          "id": "S06A3",
+          "titulo": "Design e conteúdo",
+          "objetivo": "Definir identidade visual, estrutura das páginas e textos.",
+          "checklist": [
+            "Wireframe aprovado",
+            "Textos e fotos com autorização da cliente"
+          ]
+        },
+        {
+          "id": "S06A4",
+          "titulo": "Construção I: estrutura",
+          "objetivo": "Criar o projeto Next.js com o kit e montar o layout e as páginas.",
+          "checklist": [
+            "Projeto criado com `/novo-projeto`",
+            "Navegação entre páginas funcionando"
+          ]
+        },
+        {
+          "id": "S06A5",
+          "titulo": "Construção II: seções",
+          "objetivo": "Montar serviços e preços, galeria, depoimentos, WhatsApp e mapa.",
+          "checklist": [
+            "Todas as seções prontas",
+            "Site bom no celular"
+          ]
+        }
+      ],
+      "desafio": {
+        "id": "S06D",
+        "titulo": "Validação com a cliente",
+        "descricao": "Mostre o site rodando no seu computador para a cliente, anote os ajustes e aplique."
+      }
+    },
+    {
+      "n": 7,
+      "fase": "F3",
+      "titulo": "Publicação e entrega",
+      "aulas": [
+        {
+          "id": "S07A1",
+          "titulo": "Google e desempenho",
+          "objetivo": "SEO local, metadados, Perfil da Empresa no Google e Lighthouse.",
+          "checklist": [
+            "Metadados e sitemap configurados",
+            "Boa nota no Lighthouse no celular"
+          ]
+        },
+        {
+          "id": "S07A2",
+          "titulo": "GitHub",
+          "objetivo": "Criar conta, repositório privado e enviar o projeto.",
+          "checklist": [
+            "Repositório privado no GitHub",
+            "Sei a diferença entre commit e push"
+          ]
+        },
+        {
+          "id": "S07A3",
+          "titulo": "Deploy na Vercel e domínio",
+          "objetivo": "Publicar, entender as prévias de deploy e conectar um domínio.",
+          "checklist": [
+            "Site no ar com HTTPS",
+            "Sei como o DNS aponta o domínio"
+          ]
+        },
+        {
+          "id": "S07A4",
+          "titulo": "Entrega e próxima venda",
+          "objetivo": "Checklist de entrega, treinamento, manutenção e proposta de upgrade com agendamento online.",
+          "checklist": [
+            "Entrega formal feita",
+            "Proposta de upgrade enviada"
+          ]
+        },
+        {
+          "id": "S07A5",
+          "titulo": "Retrospectiva e portfólio",
+          "objetivo": "Comparar horas estimadas e reais e escrever o case.",
+          "checklist": [
+            "Planilha de estimado contra real",
+            "Case publicado no portfólio"
+          ]
+        }
+      ],
+      "prova": "F3"
+    },
+    {
+      "n": 8,
+      "fase": "F4",
+      "titulo": "Entender o negócio e modelar",
+      "aulas": [
+        {
+          "id": "S08A1",
+          "titulo": "Como funciona a colheita de maçã",
+          "objetivo": "Aprender o domínio: bins, safristas, quadras, encarregado e pagamento por produção.",
+          "checklist": [
+            "Glossário do negócio escrito",
+            "Roteiro de entrevista pronto"
+          ]
+        },
+        {
+          "id": "S08A2",
+          "titulo": "Requisitos e histórias de usuário",
+          "objetivo": "Transformar a entrevista em requisitos, histórias e critérios de aceite, e definir o MVP.",
+          "checklist": [
+            "Histórias com critérios de aceite",
+            "MVP definido e o que fica para depois"
+          ]
+        },
+        {
+          "id": "S08A3",
+          "titulo": "Modelagem de dados",
+          "objetivo": "Desenhar entidades e relacionamentos num diagrama.",
+          "checklist": [
+            "Diagrama de entidades",
+            "Sei explicar chave primária e chave estrangeira"
+          ]
+        },
+        {
+          "id": "S08A4",
+          "titulo": "Banco de dados e SQL básico",
+          "objetivo": "Criar tabelas e consultar com SELECT, INSERT e JOIN no Supabase.",
+          "checklist": [
+            "Escrevo um SELECT com filtro",
+            "Entendo um JOIN"
+          ]
+        },
+        {
+          "id": "S08A5",
+          "titulo": "Proposta de sistema sob medida",
+          "objetivo": "Estimar e precificar um sistema e montar um cronograma por entregas.",
+          "checklist": [
+            "Proposta com cronograma por etapas",
+            "Riscos listados"
+          ]
+        }
+      ],
+      "desafio": {
+        "id": "S08D",
+        "titulo": "Protótipo de papel",
+        "descricao": "Esboce as telas do encarregado e valide com alguém no papel do produtor."
+      }
+    },
+    {
+      "n": 9,
+      "fase": "F4",
+      "titulo": "A base do app",
+      "aulas": [
+        {
+          "id": "S09A1",
+          "titulo": "Supabase na prática",
+          "objetivo": "Criar o projeto, as tabelas por migrations e os dados fictícios.",
+          "checklist": [
+            "Migrations versionadas no Git",
+            "Dados de teste carregados"
+          ]
+        },
+        {
+          "id": "S09A2",
+          "titulo": "Login e perfis com segurança",
+          "objetivo": "Autenticação, perfis (produtor e encarregado) e Row Level Security.",
+          "checklist": [
+            "Login funcionando",
+            "Cada perfil só vê o que pode"
+          ]
+        },
+        {
+          "id": "S09A3",
+          "titulo": "Next.js conversando com o banco",
+          "objetivo": "Listar e exibir dados, entendendo onde roda cada parte do código.",
+          "checklist": [
+            "Lista de safristas vinda do banco",
+            "Sei o que roda no servidor e o que roda no navegador"
+          ]
+        },
+        {
+          "id": "S09A4",
+          "titulo": "Formulários e validação",
+          "objetivo": "Registrar bins com validação e mensagens claras.",
+          "checklist": [
+            "Registro de bin funcionando",
+            "Erros de validação claros para o usuário"
+          ]
+        },
+        {
+          "id": "S09A5",
+          "titulo": "Testes automatizados",
+          "objetivo": "Escrever testes com o Claude e rodá-los automaticamente com um hook.",
+          "checklist": [
+            "Testes rodando com um comando",
+            "Hook roda os testes depois das mudanças"
+          ]
+        }
+      ],
+      "desafio": {
+        "id": "S09D",
+        "titulo": "Teste do encarregado",
+        "descricao": "Use o app no celular como encarregado por 20 minutos com dados fictícios e liste os problemas."
+      }
+    },
+    {
+      "n": 10,
+      "fase": "F4",
+      "titulo": "Regras de negócio e celular",
+      "aulas": [
+        {
+          "id": "S10A1",
+          "titulo": "Pagamento por produção",
+          "objetivo": "Regras de cálculo, dinheiro em centavos e arredondamento.",
+          "checklist": [
+            "Cálculo testado com casos reais",
+            "Valores guardados em centavos"
+          ]
+        },
+        {
+          "id": "S10A2",
+          "titulo": "Relatórios e exportação",
+          "objetivo": "Relatórios por safrista, quadra e dia, com exportação para planilha.",
+          "checklist": [
+            "Relatório por período",
+            "CSV abrindo certo no Excel"
+          ]
+        },
+        {
+          "id": "S10A3",
+          "titulo": "Painel do produtor",
+          "objetivo": "Gráficos e indicadores da safra.",
+          "checklist": [
+            "Painel com indicadores conferidos"
+          ]
+        },
+        {
+          "id": "S10A4",
+          "titulo": "PWA: app no celular",
+          "objetivo": "Tornar o app instalável, com telas para uso no sol e com pressa.",
+          "checklist": [
+            "App instalável no celular",
+            "Botões grandes e alto contraste"
+          ]
+        },
+        {
+          "id": "S10A5",
+          "titulo": "Ambientes e deploy",
+          "objetivo": "Homologação e produção, variáveis de ambiente e backups.",
+          "checklist": [
+            "Dois ambientes separados",
+            "Sei restaurar um backup"
+          ]
+        }
+      ],
+      "desafio": {
+        "id": "S10D",
+        "titulo": "Um dia de safra simulado",
+        "descricao": "Rode um dia fictício com 30 safristas e confira o pagamento de cada um."
+      }
+    },
+    {
+      "n": 11,
+      "fase": "F4",
+      "titulo": "Sem sinal no pomar e entrega",
+      "aulas": [
+        {
+          "id": "S11A1",
+          "titulo": "Offline I: conceitos",
+          "objetivo": "Service worker, armazenamento local e fila de sincronização.",
+          "checklist": [
+            "Explico como o app guarda dados sem internet"
+          ]
+        },
+        {
+          "id": "S11A2",
+          "titulo": "Offline II: implementação",
+          "objetivo": "Guardar registros no celular e sincronizar quando o sinal volta.",
+          "checklist": [
+            "Registro feito sem internet sincroniza depois",
+            "Registros duplicados evitados"
+          ]
+        },
+        {
+          "id": "S11A3",
+          "titulo": "Teste de campo",
+          "objetivo": "Simular sinal ruim e validar com um usuário.",
+          "checklist": [
+            "Testado com rede lenta e sem rede"
+          ]
+        },
+        {
+          "id": "S11A4",
+          "titulo": "Entrega, LGPD e suporte",
+          "objetivo": "Manual do usuário, treinamento, dados de trabalhadores e contrato de suporte.",
+          "checklist": [
+            "Manual do usuário pronto",
+            "Dados pessoais tratados conforme a LGPD"
+          ]
+        },
+        {
+          "id": "S11A5",
+          "titulo": "Retrospectiva e case",
+          "objetivo": "Comparar estimado e real e escrever o case.",
+          "checklist": [
+            "Case publicado no portfólio"
+          ]
+        }
+      ],
+      "prova": "F4"
+    },
+    {
+      "n": 12,
+      "fase": "F5",
+      "titulo": "Pensar como dono de produto",
+      "aulas": [
+        {
+          "id": "S12A1",
+          "titulo": "O que é um SaaS",
+          "objetivo": "Multi-cliente, assinatura, MRR, churn e a diferença para um projeto sob medida.",
+          "checklist": [
+            "Explico MRR e churn",
+            "Sei quando vender SaaS e quando vender projeto"
+          ]
+        },
+        {
+          "id": "S12A2",
+          "titulo": "Mercado e MVP",
+          "objetivo": "Pesquisar concorrentes e definir o MVP.",
+          "checklist": [
+            "Mapa de concorrentes",
+            "MVP com no máximo 5 funcionalidades"
+          ]
+        },
+        {
+          "id": "S12A3",
+          "titulo": "Cobrança no Brasil: a decisão",
+          "objetivo": "Comparar Stripe, Asaas e Mercado Pago (Pix, boleto, cartão recorrente, taxas) com pesquisa atualizada e decidir.",
+          "checklist": [
+            "Comparativo com taxas atuais",
+            "Meio de pagamento escolhido e justificado"
+          ]
+        },
+        {
+          "id": "S12A4",
+          "titulo": "Arquitetura multi-cliente",
+          "objetivo": "Organizações, isolamento de dados com RLS e papéis (dono, instrutor, aluno).",
+          "checklist": [
+            "Diagrama de isolamento",
+            "Papéis definidos"
+          ]
+        },
+        {
+          "id": "S12A5",
+          "titulo": "Modelagem do SaaS",
+          "objetivo": "Estúdios, alunos, planos, turmas, reservas, presenças e assinaturas.",
+          "checklist": [
+            "Modelo de dados revisado"
+          ]
+        }
+      ],
+      "desafio": {
+        "id": "S12D",
+        "titulo": "Planos e preços",
+        "descricao": "Defina 3 planos do SaaS, com preço e o que cada um inclui."
+      }
+    },
+    {
+      "n": 13,
+      "fase": "F5",
+      "titulo": "Fundação do produto",
+      "aulas": [
+        {
+          "id": "S13A1",
+          "titulo": "Contas e organizações",
+          "objetivo": "Login, organizações e convite de usuários.",
+          "checklist": [
+            "Convite por e-mail funcionando"
+          ]
+        },
+        {
+          "id": "S13A2",
+          "titulo": "Cadastro com teste grátis",
+          "objetivo": "O estúdio se cadastra sozinho e ganha um período de teste.",
+          "checklist": [
+            "Estúdio novo se cadastra sem ajuda"
+          ]
+        },
+        {
+          "id": "S13A3",
+          "titulo": "Cadastros reutilizáveis",
+          "objetivo": "Alunos e planos com um padrão de cadastro reaproveitável.",
+          "checklist": [
+            "Padrão de cadastro documentado no CLAUDE.md"
+          ]
+        },
+        {
+          "id": "S13A4",
+          "titulo": "Design system do produto",
+          "objetivo": "Componentes consistentes e identidade visual do produto.",
+          "checklist": [
+            "Biblioteca de componentes base"
+          ]
+        },
+        {
+          "id": "S13A5",
+          "titulo": "Integração contínua",
+          "objetivo": "GitHub Actions rodando os testes a cada envio.",
+          "checklist": [
+            "Testes rodando no GitHub a cada push"
+          ]
+        }
+      ],
+      "desafio": {
+        "id": "S13D",
+        "titulo": "Dados realistas",
+        "descricao": "Gere 3 estúdios fictícios com 50 alunos cada para testar."
+      }
+    },
+    {
+      "n": 14,
+      "fase": "F5",
+      "titulo": "Agenda e reservas",
+      "aulas": [
+        {
+          "id": "S14A1",
+          "titulo": "Turmas e grade horária",
+          "objetivo": "Aulas recorrentes e grade semanal.",
+          "checklist": [
+            "Grade semanal gerada"
+          ]
+        },
+        {
+          "id": "S14A2",
+          "titulo": "Reservas e vagas",
+          "objetivo": "Limite de vagas, fila de espera e reservas ao mesmo tempo.",
+          "checklist": [
+            "Duas reservas simultâneas não estouram a vaga"
+          ]
+        },
+        {
+          "id": "S14A3",
+          "titulo": "Check-in e app do aluno",
+          "objetivo": "Presença e app do aluno no celular.",
+          "checklist": [
+            "Aluno reserva e faz check-in pelo celular"
+          ]
+        },
+        {
+          "id": "S14A4",
+          "titulo": "Notificações",
+          "objetivo": "E-mails automáticos, lembretes e fuso horário.",
+          "checklist": [
+            "Lembrete de aula enviado"
+          ]
+        },
+        {
+          "id": "S14A5",
+          "titulo": "Revisão e refatoração",
+          "objetivo": "Revisar com `/code-review`, simplificar e melhorar o desempenho.",
+          "checklist": [
+            "Revisão aplicada e testes passando"
+          ]
+        }
+      ],
+      "desafio": {
+        "id": "S14D",
+        "titulo": "Semana simulada",
+        "descricao": "Simule uma semana inteira de um estúdio e anote os problemas."
+      }
+    },
+    {
+      "n": 15,
+      "fase": "F5",
+      "titulo": "Cobrança recorrente",
+      "aulas": [
+        {
+          "id": "S15A1",
+          "titulo": "Integração com o meio de pagamento",
+          "objetivo": "Clientes e assinaturas em modo de teste.",
+          "checklist": [
+            "Assinatura criada no ambiente de teste"
+          ]
+        },
+        {
+          "id": "S15A2",
+          "titulo": "Webhooks",
+          "objetivo": "Receber avisos de pagamento com segurança e sem duplicar.",
+          "checklist": [
+            "Webhook validado e sem duplicidade"
+          ]
+        },
+        {
+          "id": "S15A3",
+          "titulo": "Inadimplência",
+          "objetivo": "Avisos, bloqueio e segunda via.",
+          "checklist": [
+            "Fluxo de atraso testado"
+          ]
+        },
+        {
+          "id": "S15A4",
+          "titulo": "Dois níveis de cobrança",
+          "objetivo": "O estúdio paga você e o aluno paga o estúdio.",
+          "checklist": [
+            "Sei explicar os dois fluxos ao cliente"
+          ]
+        },
+        {
+          "id": "S15A5",
+          "titulo": "Teste de ponta a ponta",
+          "objetivo": "Testes automatizados do fluxo de pagamento.",
+          "checklist": [
+            "Fluxo completo testado"
+          ]
+        }
+      ],
+      "desafio": {
+        "id": "S15D",
+        "titulo": "Mês simulado",
+        "descricao": "Confira os valores de um mês inteiro de cobranças."
+      }
+    },
+    {
+      "n": 16,
+      "fase": "F5",
+      "titulo": "Pronto para vender",
+      "aulas": [
+        {
+          "id": "S16A1",
+          "titulo": "Painel do dono",
+          "objetivo": "Alunos ativos, receita e frequência.",
+          "checklist": [
+            "Indicadores conferidos com os dados"
+          ]
+        },
+        {
+          "id": "S16A2",
+          "titulo": "Página de vendas",
+          "objetivo": "Página do SaaS com planos e preços.",
+          "checklist": [
+            "Página publicada"
+          ]
+        },
+        {
+          "id": "S16A3",
+          "titulo": "LGPD em SaaS",
+          "objetivo": "Termos, privacidade, consentimento, dados de saúde e exclusão de conta.",
+          "checklist": [
+            "Termos e política publicados",
+            "Exclusão de conta funcionando"
+          ]
+        },
+        {
+          "id": "S16A4",
+          "titulo": "Segurança",
+          "objetivo": "`/security-review`, segredos, backups e monitoramento de erros.",
+          "checklist": [
+            "Revisão de segurança sem pendências graves"
+          ]
+        },
+        {
+          "id": "S16A5",
+          "titulo": "Suporte e operação",
+          "objetivo": "Logs, alertas e canal de suporte, usando a sua experiência de suporte.",
+          "checklist": [
+            "Alertas configurados",
+            "Central de ajuda iniciada"
+          ]
+        }
+      ],
+      "desafio": {
+        "id": "S16D",
+        "titulo": "Pitch de 5 minutos",
+        "descricao": "Apresente o SaaS para alguém no papel de dono de um estúdio."
+      }
+    },
+    {
+      "n": 17,
+      "fase": "F5",
+      "titulo": "Lançamento",
+      "aulas": [
+        {
+          "id": "S17A1",
+          "titulo": "Beta com estúdio piloto",
+          "objetivo": "Rodar um beta simulado e colher feedback.",
+          "checklist": [
+            "Feedback registrado"
+          ]
+        },
+        {
+          "id": "S17A2",
+          "titulo": "Priorização",
+          "objetivo": "Organizar o backlog e decidir o que entra.",
+          "checklist": [
+            "Backlog priorizado"
+          ]
+        },
+        {
+          "id": "S17A3",
+          "titulo": "Documentação e primeiro uso",
+          "objetivo": "Central de ajuda e primeiro uso guiado.",
+          "checklist": [
+            "Primeiro uso guiado pronto"
+          ]
+        },
+        {
+          "id": "S17A4",
+          "titulo": "Evoluir sem quebrar",
+          "objetivo": "Deploys contínuos, migrations seguras e versões.",
+          "checklist": [
+            "Migration aplicada sem perder dados"
+          ]
+        },
+        {
+          "id": "S17A5",
+          "titulo": "Retrospectiva e case",
+          "objetivo": "Comparar estimado e real e escrever o case.",
+          "checklist": [
+            "Case do SaaS publicado"
+          ]
+        }
+      ],
+      "prova": "F5"
+    },
+    {
+      "n": 18,
+      "fase": "F6",
+      "titulo": "Entender a operação",
+      "aulas": [
+        {
+          "id": "S18A1",
+          "titulo": "O que é um ERP",
+          "objetivo": "Módulos e processos de uma distribuidora: compra, estoque, venda, entrega e financeiro.",
+          "checklist": [
+            "Mapa dos processos"
+          ]
+        },
+        {
+          "id": "S18A2",
+          "titulo": "Mapeamento de processos",
+          "objetivo": "Diagramar o fluxo atual e o desejado.",
+          "checklist": [
+            "Fluxo atual e fluxo desejado desenhados"
+          ]
+        },
+        {
+          "id": "S18A3",
+          "titulo": "Escopo do ERP básico",
+          "objetivo": "O que entra, implantação mais mensalidade e riscos.",
+          "checklist": [
+            "Proposta com implantação e mensalidade"
+          ]
+        },
+        {
+          "id": "S18A4",
+          "titulo": "Modelagem complexa",
+          "objetivo": "Produtos com unidades e conversões (saco, m³, unidade), estoque por movimentação, pedidos e títulos.",
+          "checklist": [
+            "Modelo com conversão de unidades"
+          ]
+        },
+        {
+          "id": "S18A5",
+          "titulo": "Permissões por cargo",
+          "objetivo": "Vendedor, estoquista, financeiro e gerente.",
+          "checklist": [
+            "Matriz de permissões"
+          ]
+        }
+      ],
+      "desafio": {
+        "id": "S18D",
+        "titulo": "A planilha antiga",
+        "descricao": "Receba uma planilha bagunçada de produtos e planeje a importação."
+      }
+    },
+    {
+      "n": 19,
+      "fase": "F6",
+      "titulo": "Cadastros e estoque",
+      "aulas": [
+        {
+          "id": "S19A1",
+          "titulo": "Cadastros e importação",
+          "objetivo": "Produtos, fornecedores e clientes, com importação de planilha.",
+          "checklist": [
+            "Importação com relatório de erros"
+          ]
+        },
+        {
+          "id": "S19A2",
+          "titulo": "Estoque por movimentação",
+          "objetivo": "Entradas, saídas, saldo e estoque mínimo.",
+          "checklist": [
+            "Saldo sempre bate com as movimentações"
+          ]
+        },
+        {
+          "id": "S19A3",
+          "titulo": "Compras e recebimento",
+          "objetivo": "Pedido de compra e entrada da mercadoria.",
+          "checklist": [
+            "Recebimento atualiza o estoque"
+          ]
+        },
+        {
+          "id": "S19A4",
+          "titulo": "Inventário e auditoria",
+          "objetivo": "Ajustes de estoque e registro de quem fez o quê.",
+          "checklist": [
+            "Toda alteração tem autor e data"
+          ]
+        },
+        {
+          "id": "S19A5",
+          "titulo": "Testes das regras de estoque",
+          "objetivo": "Testes que protegem as regras mais críticas.",
+          "checklist": [
+            "Testes cobrindo entradas, saídas e ajustes"
+          ]
+        }
+      ],
+      "desafio": {
+        "id": "S19D",
+        "titulo": "Inventário surpresa",
+        "descricao": "Simule um inventário com divergências e confira os ajustes."
+      }
+    },
+    {
+      "n": 20,
+      "fase": "F6",
+      "titulo": "Vendas",
+      "aulas": [
+        {
+          "id": "S20A1",
+          "titulo": "Orçamentos",
+          "objetivo": "Orçamento em PDF e conversão em pedido.",
+          "checklist": [
+            "Orçamento em PDF"
+          ]
+        },
+        {
+          "id": "S20A2",
+          "titulo": "Pedidos e preços",
+          "objetivo": "Reserva de estoque, tabelas de preço e limite de desconto por cargo.",
+          "checklist": [
+            "Desconto acima do limite pede aprovação"
+          ]
+        },
+        {
+          "id": "S20A3",
+          "titulo": "Entregas",
+          "objetivo": "Romaneio e controle de entregas.",
+          "checklist": [
+            "Romaneio de entrega"
+          ]
+        },
+        {
+          "id": "S20A4",
+          "titulo": "Balcão rápido",
+          "objetivo": "Busca e atalhos de teclado para o vendedor.",
+          "checklist": [
+            "Venda de balcão em menos de 1 minuto"
+          ]
+        },
+        {
+          "id": "S20A5",
+          "titulo": "Relatórios de vendas",
+          "objetivo": "Vendas por vendedor, por produto e por período.",
+          "checklist": [
+            "Relatórios conferidos"
+          ]
+        }
+      ],
+      "desafio": {
+        "id": "S20D",
+        "titulo": "Dia de balcão",
+        "descricao": "Simule 20 vendas seguidas e cronometre."
+      }
+    },
+    {
+      "n": 21,
+      "fase": "F6",
+      "titulo": "Financeiro",
+      "aulas": [
+        {
+          "id": "S21A1",
+          "titulo": "Contas a receber e a pagar",
+          "objetivo": "Títulos e parcelas.",
+          "checklist": [
+            "Parcelas geradas a partir do pedido"
+          ]
+        },
+        {
+          "id": "S21A2",
+          "titulo": "Fluxo de caixa",
+          "objetivo": "Projeção e conciliação simples.",
+          "checklist": [
+            "Fluxo de caixa projetado"
+          ]
+        },
+        {
+          "id": "S21A3",
+          "titulo": "Cobrança integrada",
+          "objetivo": "Boleto e Pix reaproveitando o que você fez no SaaS.",
+          "checklist": [
+            "Baixa automática de título pago"
+          ]
+        },
+        {
+          "id": "S21A4",
+          "titulo": "Painel gerencial",
+          "objetivo": "Margem, inadimplência e giro de estoque.",
+          "checklist": [
+            "Painel com margem e inadimplência"
+          ]
+        },
+        {
+          "id": "S21A5",
+          "titulo": "Exportação para o contador",
+          "objetivo": "Arquivos e relatórios que o contador consegue usar.",
+          "checklist": [
+            "Exportação validada"
+          ]
+        }
+      ],
+      "desafio": {
+        "id": "S21D",
+        "titulo": "Fechamento do mês",
+        "descricao": "Feche um mês fictício e confira se o caixa bate."
+      }
+    },
+    {
+      "n": 22,
+      "fase": "F6",
+      "titulo": "Nota fiscal",
+      "aulas": [
+        {
+          "id": "S22A1",
+          "titulo": "Fiscal para quem desenvolve",
+          "objetivo": "NF-e, NCM, CFOP, CST/CSOSN, regimes e o que muda com CBS e IBS. O que prometer ao cliente.",
+          "checklist": [
+            "Sei o que é papel do sistema e o que é papel do contador"
+          ]
+        },
+        {
+          "id": "S22A2",
+          "titulo": "Escolher a API de NF-e",
+          "objetivo": "Comparar provedores, homologação e certificado digital A1.",
+          "checklist": [
+            "Provedor escolhido com pesquisa atualizada"
+          ]
+        },
+        {
+          "id": "S22A3",
+          "titulo": "Emitir em homologação",
+          "objetivo": "NF-e de teste a partir do pedido.",
+          "checklist": [
+            "NF-e autorizada em homologação"
+          ]
+        },
+        {
+          "id": "S22A4",
+          "titulo": "Cancelamento, correção e guarda",
+          "objetivo": "Cancelar, carta de correção, DANFE e guarda dos XML.",
+          "checklist": [
+            "XML guardado com segurança"
+          ]
+        },
+        {
+          "id": "S22A5",
+          "titulo": "Rejeições e reprocessamento",
+          "objetivo": "Tratar rejeições da SEFAZ com fila e mensagens claras.",
+          "checklist": [
+            "Rejeição tratada com mensagem clara"
+          ]
+        }
+      ],
+      "desafio": {
+        "id": "S22D",
+        "titulo": "Dez notas de teste",
+        "descricao": "Emita 10 notas em homologação com situações diferentes e trate as rejeições."
+      }
+    },
+    {
+      "n": 23,
+      "fase": "F6",
+      "titulo": "Implantação",
+      "aulas": [
+        {
+          "id": "S23A1",
+          "titulo": "Migração de dados",
+          "objetivo": "Importar e conferir os dados antigos.",
+          "checklist": [
+            "Dados antigos importados e conferidos"
+          ]
+        },
+        {
+          "id": "S23A2",
+          "titulo": "Plano de implantação",
+          "objetivo": "Treinamento por cargo, virada e operação paralela.",
+          "checklist": [
+            "Plano de virada"
+          ]
+        },
+        {
+          "id": "S23A3",
+          "titulo": "Desempenho",
+          "objetivo": "Índices e paginação com muitos dados.",
+          "checklist": [
+            "Telas rápidas com 100 mil registros"
+          ]
+        },
+        {
+          "id": "S23A4",
+          "titulo": "Segurança, backups e SLA",
+          "objetivo": "Fechar segurança e backups e montar o contrato de suporte.",
+          "checklist": [
+            "Contrato de suporte com SLA"
+          ]
+        },
+        {
+          "id": "S23A5",
+          "titulo": "Retrospectiva e case",
+          "objetivo": "Comparar estimado e real e escrever o case.",
+          "checklist": [
+            "Case do ERP publicado"
+          ]
+        }
+      ],
+      "prova": "F6"
+    },
+    {
+      "n": 24,
+      "fase": "F7",
+      "titulo": "Um cliente que você nunca viu",
+      "aulas": [
+        {
+          "id": "S24A1",
+          "titulo": "Briefing surpresa",
+          "objetivo": "Receber um segmento sorteado e entrevistar o cliente.",
+          "checklist": [
+            "Briefing completo"
+          ]
+        },
+        {
+          "id": "S24A2",
+          "titulo": "Proposta",
+          "objetivo": "Requisitos, escopo, cronograma e preço.",
+          "checklist": [
+            "Proposta defendida com números"
+          ]
+        },
+        {
+          "id": "S24A3",
+          "titulo": "Protótipo I",
+          "objetivo": "Base do protótipo com o kit.",
+          "checklist": [
+            "Base do protótipo pronta"
+          ]
+        },
+        {
+          "id": "S24A4",
+          "titulo": "Protótipo II e publicação",
+          "objetivo": "Fluxo principal pronto e publicado.",
+          "checklist": [
+            "Protótipo publicado"
+          ]
+        },
+        {
+          "id": "S24A5",
+          "titulo": "Apresentação e próximos passos",
+          "objetivo": "Pitch de venda, autoavaliação e plano dos próximos 6 meses.",
+          "checklist": [
+            "Pitch gravado",
+            "Plano dos próximos 6 meses"
+          ]
+        }
+      ],
+      "prova": "F7"
+    }
+  ],
+  "bonus": {
+    "titulo": "Bônus · Power Platform",
+    "resumo": "Depois da semana 24, quando quiser.",
+    "aulas": [
+      {
+        "id": "B1",
+        "titulo": "Power Apps e Power Automate",
+        "objetivo": "O que são, quanto custam e onde aparecem nos clientes que usam Microsoft 365."
+      },
+      {
+        "id": "B2",
+        "titulo": "Low-code ou código?",
+        "objetivo": "Como argumentar com o cliente qual caminho vender."
+      },
+      {
+        "id": "B3",
+        "titulo": "Um app canvas com o plugin que você já tem",
+        "objetivo": "Usar o Claude Code com um plugin de Power Platform para montar um app canvas de exemplo."
+      }
+    ]
+  },
+  "referencia": [
+    {
+      "grupo": "Atalhos",
+      "itens": [
+        {
+          "k": "Esc",
+          "d": "Interrompe o Claude no meio do trabalho. Numa pergunta de permissão, recusa.",
+          "s": 1
+        },
+        {
+          "k": "Esc Esc",
+          "d": "Com a caixa vazia, abre o menu de rewind. Com texto, limpa o rascunho.",
+          "s": 1
+        },
+        {
+          "k": "Shift+Tab",
+          "d": "Alterna os modos de permissão. No Windows, use Alt+M se o Shift+Tab não funcionar.",
+          "s": 1
+        },
+        {
+          "k": "Alt+P",
+          "d": "Troca de modelo sem apagar o que você está digitando.",
+          "s": 1
+        },
+        {
+          "k": "Ctrl+O",
+          "d": "Mostra os detalhes de cada ferramenta que o Claude usou.",
+          "s": 1
+        },
+        {
+          "k": "Ctrl+R",
+          "d": "Busca nos pedidos que você já fez.",
+          "s": 1
+        },
+        {
+          "k": "Alt+V",
+          "d": "Cola uma imagem da área de transferência (Windows).",
+          "s": 1
+        },
+        {
+          "k": "Shift+Enter",
+          "d": "Quebra de linha no pedido. Alternativas: Ctrl+J ou \\ seguido de Enter.",
+          "s": 1
+        },
+        {
+          "k": "Ctrl+G",
+          "d": "Abre o pedido no editor de texto, bom para pedidos longos.",
+          "s": 1
+        },
+        {
+          "k": "Ctrl+C",
+          "d": "Interrompe. Sem nada rodando, a primeira vez limpa a caixa e a segunda sai.",
+          "s": 1
+        },
+        {
+          "k": "?",
+          "d": "Com a caixa vazia, mostra a lista de atalhos.",
+          "s": 1
+        }
+      ]
+    },
+    {
+      "grupo": "No começo do pedido",
+      "itens": [
+        {
+          "k": "/",
+          "d": "Comando ou skill. Digite / e letras para filtrar.",
+          "s": 1
+        },
+        {
+          "k": "!",
+          "d": "Modo terminal: roda o comando direto e o Claude comenta a saída.",
+          "s": 1
+        },
+        {
+          "k": "@",
+          "d": "Aponta um arquivo ou pasta, com autocompletar.",
+          "s": 1
+        }
+      ]
+    },
+    {
+      "grupo": "Contexto e consumo",
+      "itens": [
+        {
+          "k": "/context",
+          "d": "Mostra o que está ocupando o contexto, em uma grade colorida.",
+          "s": 1
+        },
+        {
+          "k": "/usage",
+          "d": "Uso do plano e estatísticas. Tecla d ou w alterna 24 horas e 7 dias. Atalho: /cost.",
+          "s": 1
+        },
+        {
+          "k": "/clear [nome]",
+          "d": "Começa uma conversa nova e vazia. Custo zero. A anterior fica no /resume.",
+          "s": 1
+        },
+        {
+          "k": "/compact [foco]",
+          "d": "Resume a conversa para liberar espaço. É uma requisição grande.",
+          "s": 1
+        },
+        {
+          "k": "/model",
+          "d": "Escolhe o modelo e salva como padrão. Tecla s troca só nesta sessão.",
+          "s": 1
+        },
+        {
+          "k": "/effort [nível]",
+          "d": "Ajusta o esforço de raciocínio: low, medium, high, xhigh, max ou auto. /effort status mostra o atual.",
+          "s": 1
+        },
+        {
+          "k": "/btw [pergunta]",
+          "d": "Pergunta lateral que não entra na conversa nem ocupa contexto.",
+          "s": 1
+        }
+      ]
+    },
+    {
+      "grupo": "Segurança e controle",
+      "itens": [
+        {
+          "k": "/permissions",
+          "d": "Regras de allow, ask e deny. Deny vale em todos os modos.",
+          "s": 1
+        },
+        {
+          "k": "/plan [tarefa]",
+          "d": "Entra no modo plano: o Claude explora e propõe antes de mexer.",
+          "s": 1
+        },
+        {
+          "k": "/rewind",
+          "d": "Volta código e/ou conversa a um ponto anterior. Não desfaz comandos de terminal.",
+          "s": 1
+        },
+        {
+          "k": "/diff",
+          "d": "Mostra as mudanças nos arquivos.",
+          "s": 1
+        }
+      ]
+    },
+    {
+      "grupo": "Sessões",
+      "itens": [
+        {
+          "k": "claude -c",
+          "d": "Continua a conversa mais recente desta pasta.",
+          "s": 1
+        },
+        {
+          "k": "claude -r",
+          "d": "Abre a lista de sessões para escolher (o mesmo que --resume).",
+          "s": 1
+        },
+        {
+          "k": "claude -n nome",
+          "d": "Abre uma sessão já com nome.",
+          "s": 1
+        },
+        {
+          "k": "/resume [nome]",
+          "d": "Troca para outra conversa de dentro da sessão.",
+          "s": 1
+        },
+        {
+          "k": "/rename nome",
+          "d": "Dá nome à sessão atual.",
+          "s": 1
+        },
+        {
+          "k": "/export",
+          "d": "Salva ou copia a conversa como texto.",
+          "s": 1
+        }
+      ]
+    },
+    {
+      "grupo": "Ajuda",
+      "itens": [
+        {
+          "k": "/help",
+          "d": "Ajuda e lista de comandos.",
+          "s": 1
+        },
+        {
+          "k": "/status",
+          "d": "Versão, modelo, conta e conexão.",
+          "s": 1
+        },
+        {
+          "k": "/doctor",
+          "d": "Checa a instalação e as configurações e propõe correções.",
+          "s": 1
+        },
+        {
+          "k": "/release-notes",
+          "d": "O que mudou em cada versão.",
+          "s": 1
+        }
+      ]
+    }
+  ],
+  "mudancas": [
+    {
+      "data": "AAAA-MM-DD",
+      "versao": "{{VERSAO}}",
+      "texto": "Laboratório criado a partir do plugin Trilha Claude Code (beta). Desde a versão 2.1.283, o terminal e o VS Code começam no modo auto, em que o Claude age sem perguntar e um segundo modelo confere as ações arriscadas. A aula S01A4 ensina a trocar de modo."
+    }
+  ]
+}

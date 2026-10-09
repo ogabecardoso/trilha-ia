@@ -1,0 +1,13 @@
+# Projetos de clientes têm Git próprio
+projetos/
+
+# Segredos
+.env
+.env.*
+
+# Dependências e builds
+node_modules/
+.next/
+
+# Configurações pessoais do Claude Code nesta pasta
+.claude/settings.local.json

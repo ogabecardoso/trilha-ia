@@ -1,0 +1,14 @@
+{
+  "name": "trilha-ia",
+  "description": "Trilha Claude Code: de iniciante a especialista em soluções com IA (beta)",
+  "owner": {
+    "name": "Gabriel"
+  },
+  "plugins": [
+    {
+      "name": "trilha",
+      "source": "./plugins/trilha",
+      "description": "Trilha de 24 semanas com entrevista de entrada, tutor diário (/trilha:aula) e página com mapa e progresso. Versão beta."
+    }
+  ]
+}

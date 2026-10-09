@@ -1,0 +1,78 @@
+# Laboratório da Trilha Claude Code
+
+Esta pasta é o laboratório de {{NOME}} numa trilha de 24 semanas ({{INICIO_BR}} a {{FIM_BR}}) para virar especialista em soluções com IA (sites, apps, SaaS e ERP) e saber planejar, desenvolver, entregar e vender projetos para clientes. A trilha vem do plugin `trilha` (beta); o tutor é a skill `/trilha:aula`.
+
+## O aluno
+
+{{PERFIL}}
+
+## Regras de trabalho
+
+- Português do Brasil, tom didático e direto. Explique termos técnicos na primeira vez que aparecem.
+- Numa aula ou exercício, **não faça pelo aluno o que é a prática dele.** Guie, dê dicas graduais e confira.
+- Código em inglês (nomes de variáveis, funções e tabelas). Telas e comentários em português.
+- {{REGRA_DADOS}}
+- Nunca leia nem exiba `.env` ou segredos.
+- Não faça commit sem o aluno pedir.
+- {{REGRA_ECONOMIA}}
+
+## Projetos da trilha
+
+{{PROJETOS}}
+
+## Estrutura
+
+```
+manual/trilha.json     mapa completo: fases, semanas, aulas, checklists, referência, "o que mudou"
+manual/aulas/<id>.md   conteúdo detalhado de cada aula (S01A1...) e desafio (S01D...)
+manual/index.html      página do artefato (lê os dois acima e o progresso.json)
+progresso.json         progresso do aluno
+kit/                   kit da agência (semanas 4 e 5)
+exercicios/            práticas, uma pasta por semana
+projetos/              projetos de clientes, cada um com Git próprio (fora deste repositório)
+```
+
+Aulas marcadas com `"dispensada": true` no `trilha.json` cobrem o que o aluno já domina. O tutor pula essas aulas, mas elas continuam disponíveis para revisão.
+
+## Artefato
+
+- URL: {{URL_ARTEFATO}}
+- Publicar ou atualizar: ferramenta Artifact, `file_path: manual/index.html`, `url` acima e `files` com os arquivos que mudaram, por exemplo `{"progresso.json": "progresso.json", "trilha.json": "manual/trilha.json", "aulas/S02A1.md": {"from": "manual/aulas/S02A1.md", "contentType": "text/markdown"}}`.
+
+## progresso.json
+
+```json
+{
+  "aulaAtual": "S01A2",
+  "registros": {
+    "S01A1": {
+      "status": "concluida",
+      "data": "2026-10-12",
+      "checklist": [true, true, false],
+      "fixacao": "resposta do aluno, resumida",
+      "dificuldades": "o que travou, em uma frase",
+      "versao": "2.1.295"
+    }
+  }
+}
+```
+
+Status: `em_andamento` ou `concluida`. Desafios usam o id `S01D`; provas usam o id da fase (`F1`), com o campo `criterios` no lugar de `checklist`.
+
+## Como escrever uma semana nova
+
+O conteúdo é escrito semana a semana, adaptado ao progresso. Antes de escrever a semana N:
+
+1. Procure a versão base da semana no plugin (a `/trilha:aula preparar` informa a pasta de modelos). Se existir, adapte-a; se não, escreva do zero.
+2. Leia em `progresso.json` as dificuldades e respostas das semanas anteriores e ajuste o ritmo.
+3. Baseie-se na documentação oficial (code.claude.com/docs e a documentação de cada ferramenta da stack) e confira no ambiente o que der para testar (`claude --help`, versões instaladas).
+4. Siga o formato de `manual/aulas/S01A1.md`: título, selo de conferência com versão e data, **Conceito · 10 min**, **Prática guiada · 40 min** (passos numerados e pedidos prontos para copiar), caixa **No Desktop / No VS Code** quando algo mudar, **Pergunta de fixação** e **Para ir além**. A aula inteira tem que caber em 1 hora.
+5. Use os segmentos e o cliente piloto deste aluno (seção "Projetos da trilha").
+6. Marque `"conteudo": true` nas aulas escritas em `manual/trilha.json` e acrescente à `referencia` os comandos novos ensinados.
+7. Registre novidades relevantes do Claude Code em `mudancas` e republique o artefato.
+
+Stack da trilha: Next.js + TypeScript + Tailwind + Supabase + Vercel. GitHub só entra no primeiro deploy (semana 7).
+
+# Compact instructions
+
+Preserve a aula em andamento, o passo atual e as respostas do aluno.
